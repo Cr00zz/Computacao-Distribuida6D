@@ -2,7 +2,7 @@
 # include <stdio.h>
 # include <time.h>
 # include <mpi.h>
-#define MAX 100000
+#define MAX 5000000
 
 int main ( int argc, char *argv[] )
 {
@@ -57,7 +57,7 @@ int main ( int argc, char *argv[] )
       id_total = id_total + 1;
     }
   }
-  printf ( "  %8d  %8d  %8d  %12d\n", id, id_n_lo, id_n_hi, id_total );
+  printf ( "  Id do processo: %8d  Numero inicial do processo: %8d  Numero maximo do processo: %8d  Numeros primos encontrados: %12d\n", id, id_n_lo, id_n_hi, id_total );
 /*
   Use REDUCE to gather up the partial totals and send to process 0.
 */
@@ -67,7 +67,7 @@ int main ( int argc, char *argv[] )
   {
     wtime = MPI_Wtime() - wtime;
     printf ("\n");
-    printf ("Total  %8d  %8d  %12d  %14f\n", n_lo, MAX, total, wtime);
+    printf (" Numero Inicial: %8d  Numero final: %8d  Numeros primos encontrados no intervalo: %12d  Tempo gasto para encontrar os numeros: %14f\n", n_lo, MAX, total, wtime);
   }
   MPI_Finalize();
 
