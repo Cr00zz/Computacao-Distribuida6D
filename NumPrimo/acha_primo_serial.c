@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-#include <mpi.h>
 #include <time.h>
 
 #define LIMITE 5000000
