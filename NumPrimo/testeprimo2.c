@@ -51,7 +51,7 @@ int main(int argc, char** argv){
   {
     tempo = MPI_Wtime() - tempo;
     printf("Numero total de primos é %d.\n", totalPrimos);
-    printf("\ntempo de execução: %14f", tempo);
+    printf("\ntempo de execução: %14f\n", tempo);
   }
 
   MPI_Finalize();
