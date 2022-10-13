@@ -11,11 +11,11 @@ int primo(int n){
   int raiz, fator;
   raiz = (int) sqrt((double) n);
   for(fator = 2; fator <= raiz; fator++){
-    if(n%fator == 1){
-      return 1;
+    if(n % fator == 0){
+      return 0;
     }
   }
-  return 0;
+  return 1;
 }
 
 int main(int argc, char** argv){
