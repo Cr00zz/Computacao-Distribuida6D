@@ -21,7 +21,7 @@ int primo(int n){
 int main(int argc, char** argv){
   int my_rank, numprocs;
   int totalPrimosId, totalPrimos;
-  int i, menor, maior;
+  int i, menor = 0, maior;
   double tempo;
 
   MPI_Init(&argc,&argv);
