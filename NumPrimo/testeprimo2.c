@@ -43,7 +43,7 @@ int main(int argc, char** argv){
     }
   }
 
-  printf("O id %d pegou %d numeros primos\n", my_rank, totalPrimosId);
+  printf("O id %d pegou %d numeros primos com intervalo de %d ate %d\n", my_rank, totalPrimosId,menor,maior);
 
   MPI_Reduce(&totalPrimosId, &totalPrimos, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 
