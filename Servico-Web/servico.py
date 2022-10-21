@@ -15,8 +15,8 @@ def getTodasConversao():
 
 @app.route('/convertemoeda',methods=['POST'])
 def criaJsonMoeda():
-  real_dolar = request.json['real']*dolar
-  real_euro = request.json['real']*euro
+    real_dolar = request.json['real']*dolar
+    real_euro = request.json['real']*euro
     data = {
         'conversao': [
         'real': request.json['real'],
@@ -26,5 +26,6 @@ def criaJsonMoeda():
     }
     array_conversao.append(data)
     return jsonify(data)
+
 if __name__ == '__main__':
   app.run()
