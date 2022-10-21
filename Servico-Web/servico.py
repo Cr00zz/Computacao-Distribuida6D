@@ -18,11 +18,11 @@ def criaJsonMoeda():
     real_dolar = request.json['real']*dolar
     real_euro = request.json['real']*euro
     data = {
-        'conversao': [
+        'conversao': {
         'real': request.json['real'],
         'dolar': real_dolar,
         'euro': real_euro,
-        ]
+        }
     }
     array_conversao.append(data)
     return jsonify(data)
