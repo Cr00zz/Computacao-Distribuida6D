@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 array_conversao = []
 
-@app.route('http://nome_da_maquina.dominio/convertemoeda',methods=['GET'])
+@app.route('/convertemoeda',methods=['GET'])
 def getTodasConversao():
     return jsonify({'conversoes: \n':array_conversao})
 
-@app.route('http://nome_da_maquina.dominio/convertemoeda',methods=['POST'])
+@app.route('/convertemoeda',methods=['POST'])
 def criaJsonMoeda():
   real_dolar = request.json['real']*dolar
   real_euro = request.json['real']*euro
