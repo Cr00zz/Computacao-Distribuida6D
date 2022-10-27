@@ -6,7 +6,7 @@ dolar = 5.22
 euro = 5.09
 
 app = Flask(__name__)
-
+@app.route('/')
 array_conversao = []
 
 @app.route('/convertemoeda',methods=['GET'])
