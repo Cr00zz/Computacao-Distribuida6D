@@ -1,31 +1,27 @@
 from flask import Flask
-from flask import jsonify
-from flask import request
+import requests
+
 
 dolar = 5.22
 euro = 5.09
 
 app = Flask(__name__)
-@app.route('/')
-array_conversao = []
 
-@app.route('/convertemoeda',methods=['GET'])
-def getTodasConversao():
-    return jsonify({'conversoes: \n':array_conversao})
 
-@app.route('/convertemoeda',methods=['POST'])
-def criaJsonMoeda():
-    real_dolar = request.json['real']*dolar
-    real_euro = request.json['real']*euro
-    data = {
-        'conversao': {
-        'real': request.json['real'],
-        'dolar': real_dolar,
-        'euro': real_euro,
-        }
-    }
-    array_conversao.append(data)
-    return jsonify(data)
+@app.route("/convertemoeda",methods=['GET'])
+def paginaInicial():
+  return "Insira um valor na barra de pesquisa (em reais) para converter em dolar e euro",200
 
-if __name__ == '__main__':
+@app.route('/convertemoeda/<float:valor>',methods=['GET'])
+def convertermoeda(valor):
+  real = float(valor)
+  data ={
+    "real": real,
+    "dolar": real/dolar,
+    "euro":real/euro 
+  }
+  return data
+
+if __name__ == "__main__":
   app.run()
+  
