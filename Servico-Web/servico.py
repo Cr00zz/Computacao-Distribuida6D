@@ -8,7 +8,7 @@ euro = 5.09
 app = Flask(__name__)
 
 
-@app.route("/convertemoeda",methods=['GET'])
+@app.route("/",methods=['GET'])
 def paginaInicial():
   return "Insira um valor na barra de pesquisa (em reais) para converter em dolar e euro",200
 
